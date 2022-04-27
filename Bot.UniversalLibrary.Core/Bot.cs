@@ -28,7 +28,7 @@ public abstract class Bot : IBot
     /// </summary>
     protected Bot()
     {
-        BotState = Status.Off;
+        State = Status.Off;
         Clients = new List<IClient>();
     }
 
@@ -38,14 +38,14 @@ public abstract class Bot : IBot
     /// <param name="clients">List of bot clients (example: telegram, discord).</param>
     protected Bot(IList<IClient> clients)
     {
-        BotState = Status.Off;
+        State = Status.Off;
         Clients = clients ?? throw new ArgumentNullException(nameof(clients));
     }
 
     /// <summary>
     ///     Gets or sets the current state of the bot.
     /// </summary>
-    public Status BotState { get; protected set; }
+    public Status State { get; protected set; }
 
     /// <summary>
     ///     Gets or sets a list of clients that are responsible for interacting with the target platform.
@@ -55,18 +55,18 @@ public abstract class Bot : IBot
     /// <summary>
     ///     Bot launch.
     /// </summary>
-    public void Start()
+    public virtual void Start()
     {
-        BotState = Status.On;
+        State = Status.On;
         foreach (var client in Clients) client.Start();
     }
 
     /// <summary>
     ///     Bot stop.
     /// </summary>
-    public void Stop()
+    public virtual void Stop()
     {
-        BotState = Status.Off;
+        State = Status.Off;
         foreach (var client in Clients) client.Stop();
     }
 }
