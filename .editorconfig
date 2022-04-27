@@ -85,6 +85,7 @@ dotnet_diagnostic.SA1200.severity = silent
 dotnet_diagnostic.SA1633.severity = silent
 dotnet_diagnostic.SA1413.severity = silent
 dotnet_diagnostic.SA1101.severity = silent
+dotnet_diagnostic.SA1503.severity = silent
 
 [*.vb]
 #### Стили именования ####
