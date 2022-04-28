@@ -4,8 +4,9 @@ namespace Bot.UniversalLibrary.Core;
 
 /// <summary>
 ///     Base abstract client class.
+///     Responsible for interaction with the end platform.
 /// </summary>
-public abstract class Client : IClient
+public abstract class Client : IClient, IHistory<string>
 {
     /// <summary>
     ///     Maximum customer history length.
@@ -17,6 +18,7 @@ public abstract class Client : IClient
     /// </summary>
     protected Client()
     {
+        State = Status.Off;
         History = new Queue<string>();
     }
 
@@ -27,8 +29,30 @@ public abstract class Client : IClient
     /// <param name="maxHistoryCount">Maximum customer history length.</param>
     protected Client(Queue<string> history, int? maxHistoryCount = null)
     {
+        State = Status.Off;
         this.maxHistoryCount = maxHistoryCount;
         History = history ?? throw new ArgumentNullException(nameof(history));
+    }
+
+    /// <summary>
+    ///     Gets or sets the current state of the client.
+    /// </summary>
+    public Status State { get; protected set; }
+
+    /// <summary>
+    ///     Client launch.
+    /// </summary>
+    public virtual void Start()
+    {
+        State = Status.On;
+    }
+
+    /// <summary>
+    ///     Client stop.
+    /// </summary>
+    public virtual void Stop()
+    {
+        State = Status.Off;
     }
 
     /// <summary>
@@ -40,19 +64,9 @@ public abstract class Client : IClient
     ///     Adds an object to the end of the History.
     /// </summary>
     /// <param name="historyItem">New history entry.</param>
-    public virtual void AddToHistory(string historyItem)
+    protected virtual void AddToHistory(string historyItem)
     {
         History.Enqueue(historyItem);
         if (History.Count > maxHistoryCount) History.Dequeue();
     }
-
-    /// <summary>
-    ///     Client launch.
-    /// </summary>
-    public abstract void Start();
-
-    /// <summary>
-    ///     Client stop.
-    /// </summary>
-    public abstract void Stop();
 }

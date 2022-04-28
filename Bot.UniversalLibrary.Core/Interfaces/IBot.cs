@@ -1,8 +1,23 @@
 ﻿namespace Bot.UniversalLibrary.Core.Interfaces;
 
 /// <summary>
-///     Base client class.
-///     The client is responsible for interacting with the end platform.
+///     Entity state types.
+/// </summary>
+public enum Status
+{
+    /// <summary>
+    ///     Represents a running entity.
+    /// </summary>
+    On,
+
+    /// <summary>
+    ///     Represents a stopped entity.
+    /// </summary>
+    Off
+}
+
+/// <summary>
+///     Basic bot interface.
 /// </summary>
 public interface IBot : IStartable, IStopable
 {
