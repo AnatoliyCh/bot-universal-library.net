@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.UniversalLibrary.Core", "Bot.UniversalLibrary.Core\Bot.UniversalLibrary.Core.csproj", "{5ECAEA6B-74FC-45CE-96FF-C71D3CDC6EBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bot.UniversalLibrary.Core", "Bot.UniversalLibrary.Core\Bot.UniversalLibrary.Core.csproj", "{5ECAEA6B-74FC-45CE-96FF-C71D3CDC6EBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B18A2E64-AF8A-4B41-BC2E-D923FF0BB17A}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot.UniversalLibrary.Infrastructure", "Bot.UniversalLibrary.Infrastructure\Bot.UniversalLibrary.Infrastructure.csproj", "{FEDF0267-FB14-4CF1-AD38-358C287E3830}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,10 @@ Global
 		{5ECAEA6B-74FC-45CE-96FF-C71D3CDC6EBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ECAEA6B-74FC-45CE-96FF-C71D3CDC6EBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ECAEA6B-74FC-45CE-96FF-C71D3CDC6EBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEDF0267-FB14-4CF1-AD38-358C287E3830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEDF0267-FB14-4CF1-AD38-358C287E3830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEDF0267-FB14-4CF1-AD38-358C287E3830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEDF0267-FB14-4CF1-AD38-358C287E3830}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
