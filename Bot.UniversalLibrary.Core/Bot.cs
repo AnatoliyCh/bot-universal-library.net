@@ -3,22 +3,6 @@
 namespace Bot.UniversalLibrary.Core;
 
 /// <summary>
-///     Bot state types.
-/// </summary>
-public enum Status
-{
-    /// <summary>
-    ///     Represents a running bot.
-    /// </summary>
-    On,
-
-    /// <summary>
-    ///     Represents a stopped bot.
-    /// </summary>
-    Off
-}
-
-/// <summary>
 ///     Base abstract bot class.
 /// </summary>
 public abstract class Bot : IBot
