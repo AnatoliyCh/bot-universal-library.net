@@ -16,22 +16,13 @@ public abstract class Client : IClient, IHistory<string>
     /// <summary>
     ///     Initializes a new instance of the <see cref="Client" /> class.
     /// </summary>
-    protected Client()
-    {
-        State = Status.Off;
-        History = new Queue<string>();
-    }
-
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="Client" /> class.
-    /// </summary>
     /// <param name="history">Customer activity history.</param>
     /// <param name="maxHistoryCount">Maximum customer history length.</param>
-    protected Client(Queue<string> history, int? maxHistoryCount = null)
+    protected Client(Queue<string>? history = null, int? maxHistoryCount = null)
     {
         State = Status.Off;
         this.maxHistoryCount = maxHistoryCount;
-        History = history ?? throw new ArgumentNullException(nameof(history));
+        History = history ?? new Queue<string>();
     }
 
     /// <summary>
