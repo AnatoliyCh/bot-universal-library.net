@@ -10,20 +10,11 @@ public abstract class Bot : IBot
     /// <summary>
     ///     Initializes a new instance of the <see cref="Bot" /> class.
     /// </summary>
-    protected Bot()
-    {
-        State = Status.Off;
-        Clients = new List<IClient>();
-    }
-
-    /// <summary>
-    ///     Initializes a new instance of the <see cref="Bot" /> class.
-    /// </summary>
     /// <param name="clients">List of bot clients (example: telegram, discord).</param>
-    protected Bot(IList<IClient> clients)
+    protected Bot(IList<IClient>? clients = null)
     {
         State = Status.Off;
-        Clients = clients ?? throw new ArgumentNullException(nameof(clients));
+        Clients = clients ?? new List<IClient>();
     }
 
     /// <summary>
