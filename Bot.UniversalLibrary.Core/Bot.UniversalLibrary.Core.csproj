@@ -5,6 +5,10 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <Version>0.3.0</Version>
+        <Authors>Anatoly Ch</Authors>
+        <Description>Universal library for messenger bots on .NET</Description>
+        <RepositoryUrl>https://github.com/AnatoliyCh/bot-universal-library.net</RepositoryUrl>
     </PropertyGroup>
 
 </Project>

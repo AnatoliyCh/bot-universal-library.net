@@ -1,9 +1,11 @@
-﻿namespace Bot.UniversalLibrary.Infrastructure;
+﻿using Bot.UniversalLibrary.Core;
+
+namespace Bot.UniversalLibrary.Infrastructure;
 
 /// <summary>
 ///     Provides history as strings.
 /// </summary>
-public class StringHistory : Core.History<string>
+public class StringHistory : History<string>
 {
     /// <summary>
     ///     Initializes a new instance of the <see cref="StringHistory" /> class.

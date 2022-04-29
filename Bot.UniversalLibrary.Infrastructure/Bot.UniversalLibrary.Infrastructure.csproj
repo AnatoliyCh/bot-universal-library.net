@@ -5,6 +5,10 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
+        <Company>$(Authors)</Company>
+        <Authors>Anatoly Ch</Authors>
+        <RepositoryUrl>https://github.com/AnatoliyCh/bot-universal-library.net</RepositoryUrl>
+        <Version>0.3.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
