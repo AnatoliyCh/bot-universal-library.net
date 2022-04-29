@@ -7,4 +7,8 @@
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Bot.UniversalLibrary.Core\Bot.UniversalLibrary.Core.csproj" />
+    </ItemGroup>
+
 </Project>
