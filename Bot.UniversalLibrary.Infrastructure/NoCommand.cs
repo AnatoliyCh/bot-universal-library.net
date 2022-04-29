@@ -1,9 +1,11 @@
-﻿namespace Bot.UniversalLibrary.Infrastructure;
+﻿using Bot.UniversalLibrary.Core;
+
+namespace Bot.UniversalLibrary.Infrastructure;
 
 /// <summary>
 ///     Implements an empty command.
 /// </summary>
-public class NoCommand : Core.Command
+public class NoCommand : Command
 {
     /// <summary>
     ///     Initializes a new instance of the <see cref="NoCommand" /> class.
