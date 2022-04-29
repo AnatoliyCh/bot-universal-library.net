@@ -57,7 +57,7 @@ public abstract class History<T> : IHistory<T>
     ///     Returns history.
     /// </summary>
     /// <returns>Collection history.</returns>
-    public IEnumerable<T> GetHistory()
+    public virtual IEnumerable<T> GetHistory()
     {
         return history;
     }
