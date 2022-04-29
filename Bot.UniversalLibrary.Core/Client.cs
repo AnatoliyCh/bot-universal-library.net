@@ -6,23 +6,16 @@ namespace Bot.UniversalLibrary.Core;
 ///     Base abstract client class.
 ///     Responsible for interaction with the end platform.
 /// </summary>
-public abstract class Client : IClient, IHistory<string>
+public abstract class Client : IClient, IHistorable<string>
 {
-    /// <summary>
-    ///     Maximum customer history length.
-    /// </summary>
-    private readonly int? maxHistoryCount;
-
     /// <summary>
     ///     Initializes a new instance of the <see cref="Client" /> class.
     /// </summary>
     /// <param name="history">Customer activity history.</param>
-    /// <param name="maxHistoryCount">Maximum customer history length.</param>
-    protected Client(Queue<string>? history = null, int? maxHistoryCount = null)
+    protected Client(IHistory<string> history)
     {
         State = Status.Off;
-        this.maxHistoryCount = maxHistoryCount;
-        History = history ?? new Queue<string>();
+        History = history ?? throw new ArgumentNullException(nameof(history));
     }
 
     /// <summary>
@@ -49,15 +42,5 @@ public abstract class Client : IClient, IHistory<string>
     /// <summary>
     ///     Gets or sets the client's history.
     /// </summary>
-    public Queue<string> History { get; protected set; }
-
-    /// <summary>
-    ///     Adds an object to the end of the History.
-    /// </summary>
-    /// <param name="historyItem">New history entry.</param>
-    protected virtual void AddToHistory(string historyItem)
-    {
-        History.Enqueue(historyItem);
-        if (History.Count > maxHistoryCount) History.Dequeue();
-    }
+    public IHistory<string> History { get; protected set; }
 }
